@@ -47,9 +47,8 @@ jobs:
           VITE_MESSAGING_SENDDER_ID: ${{  vars.VITE_MESSAGING_SENDDER_ID  }}
           VITE_APP_ID: ${{  vars.VITE_APP_ID  }}
           VITE_MEASUREMENT_ID: ${{  vars.VITE_MEASUREMENT_ID  }}
-
-      - name: Build
         run: npm run build
+        
       - name: Copy index.html to 404.html
         run: cp ./dist/index.html ./dist/404.html
       - name: Setup Pages

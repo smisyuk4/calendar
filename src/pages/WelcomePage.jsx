@@ -1,6 +1,8 @@
 import { addMeet } from '../firebase/services';
 import { useEffect } from 'react';
 
+import { Calendar } from '../components/Calendar';
+
 const WelcomePage = () => {
   useEffect(() => {
     const setData = async () => {
@@ -14,6 +16,7 @@ const WelcomePage = () => {
   return (
     <div>
       <h1> Welcome page</h1>
+      <Calendar />
     </div>
   );
 };
