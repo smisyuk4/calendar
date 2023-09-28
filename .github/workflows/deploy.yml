@@ -37,6 +37,17 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm install
+
+      - name: Build and set env
+        env:
+          VITE_API_KEY: ${{  vars.VITE_API_KEY  }}
+          VITE_AUTH_DOMAIN: ${{  vars.VITE_AUTH_DOMAIN  }}
+          VITE_PROJECT_ID: ${{  vars.VITE_PROJECT_ID  }}
+          VITE_STORAGE_BUCKET: ${{  vars.VITE_STORAGE_BUCKET  }}
+          VITE_MESSAGING_SENDDER_ID: ${{  vars.VITE_MESSAGING_SENDDER_ID  }}
+          VITE_APP_ID: ${{  vars.VITE_APP_ID  }}
+          VITE_MEASUREMENT_ID: ${{  vars.VITE_MEASUREMENT_ID  }}
+
       - name: Build
         run: npm run build
       - name: Copy index.html to 404.html
